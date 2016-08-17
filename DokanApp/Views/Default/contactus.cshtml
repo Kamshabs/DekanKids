@@ -1,0 +1,331 @@
+﻿
+<style>
+    body {
+        background-image: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/fabric_plaid.png');
+        background-repeat: repeat;
+    }
+</style>
+
+<!--Blog Header Area Start-->
+@*<section class="blog-header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="b-header-text">
+                        <h1>CONTACT</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+<!--End of Blog Header Area-->
+<!--Address Area Start-->
+<div class="address-main-area">
+    <div class="container">
+        <div class="row">
+
+            @if (System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft == true)
+            {
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-c-item">
+                        <div class="s-c-icon">
+                            <img src="~/Contents/img/c-icon-3.png" alt="">
+                        </div>
+                        <p>Email : info@dekankids.com</p>
+                        <p>
+                            Google Us :
+                            <a target="_blank" href="https://www.google.com.kw/maps/place/Dekan+Kids/&#64;29.080930,48.138330,21z/data=!4m5!3m4!1s0x0000000000000000:0x99b47b11e6e85c70!8m2!3d29.0809331!4d48.1383294?hl=en&hl=en">
+                                29.080930&#44; 48.138330
+                            </a>
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-c-item">
+                        <div class="s-c-icon">
+                            <img src="~/Contents/img/c-icon-2.png" alt="">
+                        </div>
+                        <p>Whatsapp</p>
+                        <p dir="ltr">+965-51405514</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-c-item">
+                        <div class="s-c-icon">
+                            <img src="~/Contents/img/c-icon-1.png" alt="">
+                        </div>
+                        <p>58 Street, Next to Naif Hamad Al Dabbous Mosque, </p>
+                        <p>Hur Compound, Homoud Abdulaziz Al Senan St,</p>
+                        <p>Fahaheel, Kuwait</p>
+                    </div>
+                </div>
+
+            }
+            else
+            {
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-c-item">
+                        <div class="s-c-icon">
+                            <img src="~/Contents/img/c-icon-1.png" alt="">
+                        </div>
+                        <p>58 Street, Next to Naif Hamad Al Dabbous Mosque, </p>
+                        <p>Hur Compound, Homoud Abdulaziz Al Senan St,</p>
+                        <p>Fahaheel, Kuwait</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-c-item">
+                        <div class="s-c-icon">
+                            <img src="~/Contents/img/c-icon-2.png" alt="">
+                        </div>
+                        <p>Whatsapp</p>
+                        <p dir="ltr">+965-51405514</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-c-item">
+                        <div class="s-c-icon">
+                            <img src="~/Contents/img/c-icon-3.png" alt="">
+                        </div>
+                        <p>Email : info@dekankids.com</p>
+                        <p>
+                            Google Us :
+                            <a target="_blank" href="https://www.google.com.kw/maps/place/Dekan+Kids/&#64;29.080930,48.138330,21z/data=!4m5!3m4!1s0x0000000000000000:0x99b47b11e6e85c70!8m2!3d29.0809331!4d48.1383294?hl=en&hl=en">
+                                29.080930&#44; 48.138330
+                            </a>
+
+                        </p>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+<!--End of Address Area-->
+<!--Map Area start-->
+<div class="map-main-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="map-area">
+                    <div id="googleMap" style="width:100%;height:388px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Map Area-->
+<!--Contact Form Area Start-->
+<section class="contact-form-area">
+    <div class="container">
+        <div class="row">
+            <form action="#">
+                @if (System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft == true)
+                {
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <h3>Leave a Message</h3>
+                        <p class="msg">Message*</p>
+                        <textarea name="message" required></textarea>
+                        <input type="submit" value="SUBMIT QUERY">
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="contact-left-form">
+                            <p>Name*</p>
+                            <input type="text" placeholder="" required>
+                            <p>Email*</p>
+                            <input type="email" placeholder="" required>
+                            <p>Phone*</p>
+                            <input type="text" placeholder="" required>
+                            <p>Subject*</p>
+                            <input type="text" placeholder="" required>
+                        </div>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <div class="contact-left-form">
+                            <p>Name*</p>
+                            <input type="text" placeholder="" required>
+                            <p>Email*</p>
+                            <input type="email" placeholder="" required>
+                            <p>Phone*</p>
+                            <input type="text" placeholder="" required>
+                            <p>Subject*</p>
+                            <input type="text" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <h3>Leave a Message</h3>
+                        <p class="msg">Message*</p>
+                        <textarea name="message" required></textarea>
+                        <input type="submit" value="SUBMIT QUERY">
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</section>
+<!--End of Contact Form Area-->
+<!--Service Area Start-->
+<section class="service-area">
+    <div class="container">
+        <div class="row">
+            <div class="single-service">
+                <div class="service-icon">
+                    <div class="service-tablecell">
+                        <img src="~/Contents/img/serv-1.png" alt="">
+                    </div>
+                </div>
+                <h4>@DokanApp.App_GlobalResources.SiteResource.Service1Head</h4>
+                <p>@DokanApp.App_GlobalResources.SiteResource.Service1Text</p>
+            </div>
+            <div class="single-service">
+                <div class="service-icon">
+                    <div class="service-tablecell">
+                        <img src="~/Contents/img/serv-2.png" alt="">
+                    </div>
+                </div>
+                <h4>@DokanApp.App_GlobalResources.SiteResource.Service2Head</h4>
+                <p>@DokanApp.App_GlobalResources.SiteResource.Service2Text</p>
+            </div>
+            <div class="single-service">
+                <div class="service-icon">
+                    <div class="service-tablecell">
+                        <img src="~/Contents/img/serv-3.png" alt="">
+                    </div>
+                </div>
+                <h4>@DokanApp.App_GlobalResources.SiteResource.Service3Head</h4>
+                <p>@DokanApp.App_GlobalResources.SiteResource.Service3Text</p>
+            </div>
+            <div class="single-service">
+                <div class="service-icon">
+                    <div class="service-tablecell">
+                        <img src="~/Contents/img/serv-4.png" alt="">
+                    </div>
+                </div>
+                <h4>@DokanApp.App_GlobalResources.SiteResource.Service4Head</h4>
+                <p>@DokanApp.App_GlobalResources.SiteResource.Service4Text</p>
+            </div>
+            <div class="single-service">
+                <div class="service-icon">
+                    <div class="service-tablecell">
+                        <img src="~/Contents/img/serv-5.png" alt="">
+                    </div>
+                </div>
+                <h4>@DokanApp.App_GlobalResources.SiteResource.Service5Head</h4>
+                <p>@DokanApp.App_GlobalResources.SiteResource.Service5Text</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End of Service Area-->
+<!--Social Area Start-->
+<section class="social-area">
+    <div class="container">
+        <div class="row">
+            @if (System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft == true)
+            {
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="news-text">
+                        <h2>Newsletter</h2>
+                        <div class="news-form">
+                            <form action="#" id="news-form">
+                                <input type="text" name="s" placeholder="">
+                                <button type="submit">SUBSCRIBE!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="social-text">
+                        <h2>Follow us</h2>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="about-text">
+                        <h2>About us</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et. </p>
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="about-text">
+                        <h2>About us</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="social-text">
+                        <h2>Follow us</h2>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="news-text">
+                        <h2>Newsletter</h2>
+                        <div class="news-form">
+                            <form action="#" id="news-form">
+                                <input type="text" name="s" placeholder="">
+                                <button type="submit">SUBSCRIBE!</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!--End of Social Area-->
+<!-- Google Map js -->
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+    function initialize() {
+        var mapOptions = {
+            zoom: 20,
+            scrollwheel: false,
+            center: new google.maps.LatLng(29.080930, 48.138330)
+        };
+
+        var map = new google.maps.Map(document.getElementById('googleMap'),
+            mapOptions);
+
+
+        var marker = new google.maps.Marker({
+            position: { lat: 29.080930, lng: 48.138330 },
+            animation: google.maps.Animation.BOUNCE,
+            icon: '../../Contents/img/map-marker.png',
+            map: map
+        });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>	

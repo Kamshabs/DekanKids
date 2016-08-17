@@ -1,0 +1,262 @@
+﻿@model IEnumerable<DokanApp.Models.SubCategory>
+
+<style>
+    .mright {
+        margin-right: 10px;
+    }
+
+    /*.statusswitch{
+        display:none !important;
+    }
+
+    .statusswitch2{
+        display:inline-block !important;
+    }*/
+</style>
+
+<!--Shop Main Area Start-->
+<div class="shop-left-sidebar-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="blog-left-sidebar filter-container isotopeFilters">
+                    <ul class="l-sidebar blog list-inline filter">
+                        <li><a href="#" class="left-sidebar-title">Categories</a></li>
+
+                        @foreach (var items in Model)
+                        {
+                            <li>
+                                <a href="#" data-filter="@items.SubCategoryName">
+                                    <i class="fa fa-angle-right fa-2 mright"></i>
+                                    @if (ViewBag.rtl == true)
+                                    { @items.SubCategoryNameAr }
+                                    else
+                                    { @items.SubCategoryName }
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+                    <div class="left-sidebar-title"><a href="#">Filter Section </a></div>
+                    <aside class="widget-price">
+                        <h3 class="sidebar-sub-title">price</h3>
+                        <div class="price_filter">
+                            <div id="slider-range"></div>
+                            <div class="price_slider_amount">
+                                <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="left-sidebar-title"><a href="#">Color</a></div>
+                    <aside class="widget-color">
+                        <div class="colors">
+                            <span class="red"><a href="#"></a></span>
+                            <span class="burgendy"><a href="#"></a></span>
+                            <span class="purple"><a href="#"></a></span>
+                            <span class="pink"><a href="#"></a></span>
+                            <span class="blue"><a href="#"></a></span>
+                        </div>
+                    </aside>
+                    <div class="left-sidebar-title"><a href="#">Size Option</a></div>
+                    <aside class="widget-size">
+                        <div class="size">
+                            <span><a href="#">XS</a></span>
+                            <span><a href="#">S</a></span>
+                            <span><a href="#">M</a></span>
+                            <span><a href="#">L</a></span>
+                            <span><a href="#">XL</a></span>
+                        </div>
+                    </aside>
+                    <div class="left-sidebar-title"><a href="#">Manufacturer</a></div>
+                    <aside class="widget-size">
+                        <ul class="brand-list">
+                            <li><a href="#"><i class="fa fa-circle"></i>Zara</a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i>Dunhill</a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i>Walmart</a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i>Arong</a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i>Rong</a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i>Velloci</a></li>
+                            <li><a href="#"><i class="fa fa-circle"></i>Dolce &amp; Gabbana</a></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+            <div class="col-md-9 right-side-p">
+                <div class="row">
+                    <div class="shop-item-filter">
+                        <div class="filter-text">
+                            <p>Showing 1 to 16 of 25 total</p>
+                        </div>
+                        <div class="filter-by">
+                            <h4>Short by : </h4>
+                            <form action="#">
+                                <div class="select-filter">
+                                    <select>
+                                        <option value="name">Name</option>
+                                        <option value="brand">Brand</option>
+                                        <option value="color">Color</option>
+                                        <option value="price-hight">Price High</option>
+                                        <option value="price-low">Price Low</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="filter-by">
+                            <h4>Show : </h4>
+                            <form action="#">
+                                <div class="select-filter">
+                                    <select>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="shop-view">
+                            <h4>View</h4>
+                            <a href="#" class="active"><i class="fa fa-th-large"></i></a>
+                            <a href="#" class=""><i class="fa fa-th-list"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="row ">
+                    <div class="isotopeContainer">
+                        @{
+                            using (DokanApp.Models.dekandbEntities db = new DokanApp.Models.dekandbEntities())
+                            {
+                                foreach (var p in Model)
+                                {
+                                    List<DokanApp.Models.ProductMaster> productMaster = db.ProductMasters.Where(a => a.SubCategoryID == p.SubCategoryID).ToList();
+
+
+                                    foreach (var items in productMaster)
+                                    {
+
+                                        <div class="single-product-items isotopeSelector" data-filter="@items.SubCategory.SubCategoryName">
+                                            <div class="single-items">
+                                                <a href="product-details.html">
+                                                    <img class="primary-img" src=@items.imagepath alt="">
+                                                    <img class="secondary-img" src="img/product/product-25.jpg" alt="">
+                                                    <span class="image-text-bg"></span>
+                                                    <span class="image-text">SALE</span>
+                                                </a>
+                                                <div class="product-hover">
+                                                    <div class="product-links">
+                                                        <a href="#"><i class="fa fa-search"></i></a>
+                                                        <a href="#"><i class="fa fa-heart"></i></a>
+                                                        <a href="#"><i class="fa fa-exchange"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="p-bottom-cart">
+                                                    <a href="cart.html" class="hover-cart">ADD TO <span>CART</span></a>
+                                                </div>
+                                            </div>
+                                            <div class="product-info">
+                                                <h4><a href="#">@items.MasterName</a><span class="line">@items.Price KD</span><span>@items.Price</span></h4>
+                                                <div class="product-rating">
+                                                    <i class="fa fa-star color"></i>
+                                                    <i class="fa fa-star color"></i>
+                                                    <i class="fa fa-star color"></i>
+                                                    <i class="fa fa-star color"></i>
+                                                    <i class="fa fa-star color"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+                                }
+
+                            }
+                        }
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pagination">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>.....</li>
+                                <li><a href="#">19</a></li>
+                                <li><a href="#">20</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Shop Main Area-->
+<!--Brand Area Start-->
+<div class="home-three-brand-area">
+    <div class="container">
+        <div class="row">
+            <div class="brand-home-three">
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-1.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-2.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-3.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-4.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-5.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-6.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-7.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-8.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="single-brand">
+                        <a href="#"><img src="img/brand/brand-9.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of Brand Area-->
+

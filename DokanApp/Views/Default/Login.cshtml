@@ -1,0 +1,202 @@
+﻿@model DokanApp.Models.UserProfile
+
+<style>
+    body {
+        background-image: url('../../Contents/img/login_Background3.jpg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+</style>
+
+
+<!--Login Register Area Start-->
+
+<section class="login-reister-area">
+    <div class="container">
+        <div class="row">
+
+            <!-- Checking the Language and loading the Arabic or English Signup/Login Accordingly -->
+
+            @if (System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft == true)
+            {
+
+                <!-- #region Signup Arabic -->
+
+                <div class="col-lg-6 col-md-6 col-sm-12 register-right">
+                    <div class="login-register-form">
+                        <h1>لا تملك حسابا؟ سجل الان</h1>
+                        <div class="login-register">
+                            <div class="l-r-p">
+                                <p>عن طريق إنشاء حساب مع متجر لدينا، سوف تتمكن من التحرك من خلال عملية الخروج بشكل أسرع.</p>
+                                <p>تخزين عناوين الشحن متعددة، عرض وتتبع طلباتك</p>
+                                <p> في حسابك وأكثر</p>
+                            </div>
+
+                            <div class="row">
+
+                                @using (Html.BeginForm("register", "Default", FormMethod.Post, new { }))
+                                {
+
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "عنوان البريد الإلكتروني" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                                        @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control", @placeholder = "رقم الهاتف" } })
+                                        @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+
+                                        <input type="password" placeholder="أعد كتابة كلمة المرور الخاصة بك">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", @placeholder = "الاسم الكامل" } })
+                                        @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+
+                                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "اسم المستخدم" } })
+                                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "اكتب كلمة المرور الخاصة بك" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                        @*<a class="reg-c-btn" name="register" href="#">Register Now</a>*@
+                                        <input type="submit" value="سجل الان" class="reg-c-btn" />
+
+                                    </div>
+
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- #endregion -->
+
+                <!-- #region Login Arabic -->
+
+                <div class="col-lg-6 col-md-6 col-sm-12 register-left">
+                    @using (Html.BeginForm())
+                    {
+                    <div class="login-register-form">
+                        <h1>تسجيل الدخول إلى الحساب الخاص بك</h1>
+                        <div class="login-register">
+                            <div class="l-r-p left">
+                                <p>تسجيل الدخول إلى الحساب الخاص بك للحصول على</p>
+                                <p>كل هدية عظيمة لأطفالك</p>
+                            </div>
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "اسم المستخدم" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "اكتب كلمة المرور الخاصة بك" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                            <div class="pass-link">
+                                <label>
+                                    <input type="radio" value="guest" name="check">
+                                    <span>أبق تسجيل دخولي</span>
+                                </label>
+                                <a class="forgot-pass" href="help-center.html">هل نسيت كلمة المرور؟</a>
+                            </div>
+                            <input type="submit" value="تسجيل الدخول" class=" c-btn" formmethod="post" />
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                <!-- #endregion -->
+
+            }
+
+            else
+            {
+
+                <!-- #region Login English -->
+                <div class="col-lg-6 col-md-6 col-sm-12 register-left">
+                    @using (Html.BeginForm())
+                    {
+
+                    <div class="login-register-form">
+                        <h2>LOG IN YOUR ACCOUNT</h2>
+                        <div class="login-register">
+                            <div class="l-r-p left">
+                                <p>Login your account to discover all greatest</p>
+                                <p>features in this template</p>
+                            </div>
+
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                            <div class="pass-link">
+                                <label>
+                                    <input type="radio" value="guest" name="check">
+                                    <span>Keep me logged in</span>
+                                </label>
+                                <a class="forgot-pass" href="help-center.html">Forgot your Password ?</a>
+                            </div>
+                            <input type="submit" value="Login" class=" c-btn" formmethod="post" />
+                        </div>
+                    </div>
+                    }
+                </div>
+            <!-- #endregion -->
+
+                <!-- #region Signup English -->
+
+                <div class="col-lg-6 col-md-6 col-sm-12 register-right">
+                    <div class="login-register-form">
+                        <h2>DON’T HAVE AN ACCOUNT ? REGISTER NOW</h2>
+                        <div class="login-register">
+                            <div class="l-r-p">
+                                <p>By creating an account with our store, you will able to move through the checkout</p>
+                                <p>process faster. Store multipule shipping addresses, view and track your orders </p>
+                                <p>in your account and more</p>
+                            </div>
+                            <div class="row">
+
+                                @using (Html.BeginForm("register", "Default", FormMethod.Post, new { }))
+                                {
+                                <div class="col-md-6">
+                                    @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Fullname" } })
+                                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+
+                                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", @placeholder = "Username" } })
+                                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Password" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                    @*<a class="reg-c-btn" name="register" href="#">Register Now</a>*@
+                                    <input type="submit" value="Register" class="reg-c-btn" />
+
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @placeholder = "Email" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                                    @Html.EditorFor(model => model.Contact, new { htmlAttributes = new { @class = "form-control", @placeholder = "Contact" } })
+                                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+
+                                    <input type="password" placeholder="Re-password">
+                                </div>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- #endregion -->
+
+            }
+
+        </div>
+    </div>
+</section>
+
+<!--End of Login Register Area-->
+
+<!-- #region Login English -->
+<!-- #endregion -->
